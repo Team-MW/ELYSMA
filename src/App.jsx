@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, MapPin, Phone, Clock, Coffee, Utensils, Star, Menu } from 'lucide-react';
+import { Instagram, MapPin, Phone, Clock, Coffee, Utensils, Star, Menu, X, Navigation } from 'lucide-react';
+import MentionsLegales from './MentionsLegales';
 import './App.css';
 
-function App() {
+function MainApp({ onShowLegal }) {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +17,7 @@ function App() {
   }, []);
 
   const scrollToSection = (id) => {
+    setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -22,23 +25,29 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <>
       {/* NAVBAR */}
-      <nav className={`navbar ${scrolled ? 'scrolled-nav' : ''}`}>
-        <div className="brand">Elysma<span>Signature</span></div>
-        <div className="nav-links">
+      <nav className={`navbar ${(scrolled || mobileMenuOpen) ? 'scrolled-nav' : ''}`}>
+        <div className="brand" onClick={() => scrollToSection('home')} style={{ cursor: 'pointer' }}>
+          Elysma<span>Signature</span>
+        </div>
+
+        <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <div className="nav-item" onClick={() => scrollToSection('home')}>Accueil</div>
           <div className="nav-item" onClick={() => scrollToSection('about')}>L'Expérience</div>
           <div className="nav-item" onClick={() => scrollToSection('menu')}>Le Menu</div>
+          <div className="nav-item" onClick={() => scrollToSection('location')}>Où nous trouver</div>
           <div className="nav-item" onClick={() => scrollToSection('contact')}>Contact</div>
         </div>
-        <div className="nav-actions">
-          <button className="btn-reservation" onClick={() => scrollToSection('contact')}>
+
+        <div className="nav-actions desktop-only">
+          <button className="btn-reservation" onClick={() => scrollToSection('location')}>
             Réserver
           </button>
         </div>
-        <div className="menu-icon" style={{ display: 'none', color: 'var(--text-primary)', cursor: 'pointer' }}>
-          <Menu size={28} />
+
+        <div className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </div>
       </nav>
 
@@ -64,7 +73,7 @@ function App() {
         </div>
       </section>
 
-      {/* ABOUT SECTION - THE EXPERIENCE (LIGHT THEME) */}
+      {/* ABOUT SECTION */}
       <section id="about" className="about">
         <div className="about-layout">
           <div className="about-images fade-in">
@@ -85,7 +94,7 @@ function App() {
         </div>
       </section>
 
-      {/* MENU HIGHLIGHTS (DARK THEME) */}
+      {/* MENU HIGHLIGHTS */}
       <section id="menu" className="menu-preview">
         <div className="menu-header fade-in">
           <span className="section-label">Notre Carte</span>
@@ -171,6 +180,72 @@ function App() {
         </div>
       </section>
 
+      {/* OU NOUS TROUVER (LOCATION) */}
+      <section id="location" className="location-section">
+        <div className="location-grid">
+          <div className="location-info">
+            <span className="section-label">Où Nous Trouver</span>
+            <h2>Un Lieu <i>Unique</i> en plein cœur de Paris</h2>
+            <p className="location-desc">
+              Poussez les portes d'Elysma et plongez dans une atmosphère chaleureuse où le temps s'arrête. Conçu comme un écrin de calme urbain, notre espace marie élégance intemporelle et convivialité.
+            </p>
+
+            <div className="info-blocks">
+              <div className="info-block">
+                <MapPin className="info-icon" />
+                <div>
+                  <h4>Adresse</h4>
+                  <p>12 rue de la Paix<br />75002 Paris, France</p>
+                  <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="btn-link">Itinéraire <Navigation size={14} /></a>
+                </div>
+              </div>
+              <div className="info-block">
+                <Clock className="info-icon" />
+                <div>
+                  <h4>Horaires d'ouverture</h4>
+                  <p><b>Lundi - Vendredi:</b> 8h00 - 18h00</p>
+                  <p><b>Samedi - Dimanche:</b> 9h00 - 17h00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="location-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.536783858485!2d2.3298642156740685!3d48.8670119792881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e31e5008be5%3A0x6b2e3f41e976db55!2s12%20Rue%20de%20la%20Paix%2C%2075002%20Paris!5e0!3m2!1sfr!2sfr!4v1683802930265!5m2!1sfr!2sfr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Maps"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* INSTAGRAM SECTION */}
+      <section id="social" className="instagram-section">
+        <div className="instagram-layout">
+          <div className="instagram-text fade-in">
+            <span className="section-label">Notre Quotidien</span>
+            <h2>Suivez l'<i>Expérience</i></h2>
+            <p>Plongez dans les coulisses de nos créations et partagez vos moments. Assistez à nos préparations de cafés de spécialité, découvrez l'élaboration de nos plats et rejoignez notre belle communauté sur Instagram.</p>
+            <a href="https://www.instagram.com/elysma" target="_blank" rel="noreferrer" className="btn-link" style={{ marginTop: '2rem' }}>@elysma_signature</a>
+          </div>
+          <div className="instagram-container fade-in delay-1">
+            <iframe
+              src="https://www.instagram.com/p/DQzq-BSAvFN/embed"
+              className="instagram-iframe"
+              frameBorder="0"
+              scrolling="no"
+              allowtransparency="true"
+              title="Instagram Elysma Reel"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* VISUAL GALLERY BANNER */}
       <section className="gallery-banner">
         <div className="gallery-banner-item">
@@ -221,8 +296,8 @@ function App() {
           <div className="footer-col">
             <h4>Légal</h4>
             <ul>
-              <li><a href="#">Mentions Légales</a></li>
-              <li><a href="#">Politique de Confidentialité</a></li>
+              <li><a href="#mentions-legales" onClick={(e) => { e.preventDefault(); onShowLegal(); }}>Mentions Légales</a></li>
+              <li><a href="#mentions-legales" onClick={(e) => { e.preventDefault(); onShowLegal(); }}>Politique de Confidentialité</a></li>
             </ul>
           </div>
         </div>
@@ -230,10 +305,24 @@ function App() {
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Elysma Coffee & Brunch. Créé avec passion.</p>
           <div className="socials">
-            <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
           </div>
         </div>
       </footer>
+    </>
+  );
+}
+
+function App() {
+  const [showLegal, setShowLegal] = useState(false);
+
+  return (
+    <div className="app-container">
+      {showLegal ? (
+        <MentionsLegales onBack={() => setShowLegal(false)} />
+      ) : (
+        <MainApp onShowLegal={() => setShowLegal(true)} />
+      )}
     </div>
   );
 }

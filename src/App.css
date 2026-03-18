@@ -22,7 +22,7 @@
 
 .scrolled-nav {
   padding: 1.2rem 5rem;
-  background: rgba(12, 11, 10, 0.85);
+  background: rgba(12, 11, 10, 0.95);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -87,7 +87,7 @@
   padding: 0.8rem 1.8rem;
   border: 1px solid var(--primary);
   color: var(--primary);
-  background: transparent;
+  background: rgba(12, 11, 10, 0.5);
   font-family: 'Outfit', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -99,6 +99,13 @@
 .btn-reservation:hover {
   background: var(--primary);
   color: var(--secondary);
+}
+
+.mobile-menu-btn {
+  display: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 101;
 }
 
 /* HERO SECTION */
@@ -139,7 +146,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(12, 11, 10, 0.9) 0%, rgba(12, 11, 10, 0.2) 50%, rgba(12, 11, 10, 0.7) 100%);
+  background: linear-gradient(0deg, rgba(12, 11, 10, 0.95) 0%, rgba(12, 11, 10, 0.3) 50%, rgba(12, 11, 10, 0.8) 100%);
   z-index: 1;
 }
 
@@ -401,6 +408,148 @@
   font-weight: 500;
 }
 
+/* OU NOUS TROUVER (LOCATION) SECTION */
+.location-section {
+  padding: 8rem 5rem;
+  background-color: var(--surface);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+.location-info {
+  background: var(--bg-color);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-info h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.location-desc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.info-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.info-icon {
+  color: var(--primary);
+  margin-top: 4px;
+}
+
+.info-block h4 {
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.info-block p {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.info-block b {
+  font-weight: 500;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.location-map {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: #2a2a2a;
+  /* Placeholder bg */
+}
+
+/* INSTAGRAM SECTION */
+.instagram-section {
+  padding: 5rem 5rem;
+  background-color: var(--surface-light);
+  color: var(--text-dark);
+}
+
+.instagram-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.instagram-text {
+  text-align: left;
+}
+
+.instagram-text h2 {
+  font-size: 3.5rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.instagram-text p {
+  color: #5C554E;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.instagram-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.instagram-iframe {
+  width: 100%;
+  max-width: 380px;
+  height: 520px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(42, 33, 24, 0.15);
+}
+
 /* GALLERY BANNER */
 .gallery-banner {
   display: grid;
@@ -527,7 +676,73 @@
   color: var(--secondary);
 }
 
-/* RESPONSIVE */
+/* LEGAL PAGE */
+.legal-page {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+
+.legal-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex: 1;
+}
+
+.legal-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.legal-section {
+  margin-bottom: 3rem;
+}
+
+.legal-section h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.legal-section p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.btn-back {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+  color: var(--primary);
+}
+
+.legal-footer {
+  margin-top: 4rem;
+  padding: 2rem 5rem;
+  width: 100%;
+}
+
+/* RESPONSIVE DESIGN (MOBILE FIRST + OPTIMIZATIONS) */
 @media (max-width: 1024px) {
   .about-layout {
     grid-template-columns: 1fr;
@@ -536,6 +751,23 @@
 
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .instagram-text {
+    text-align: center;
+  }
+
+  .instagram-container {
+    justify-content: center;
   }
 
   .gallery-banner {
@@ -551,26 +783,141 @@
 @media (max-width: 768px) {
   .navbar {
     padding: 1.5rem 2rem;
+    background: rgba(12, 11, 10, 0.95);
   }
 
-  .nav-links,
-  .nav-actions {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .desktop-only {
     display: none;
   }
 
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(12, 11, 10, 0.98);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+  }
+
+  .nav-links.mobile-open {
+    transform: translateY(0);
+  }
+
+  .nav-item {
+    font-size: 1.5rem;
+  }
+
+  /* Padding Adjustments */
+  .hero-content {
+    margin-top: 0;
+    padding: 0 1.5rem;
+  }
+
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+  }
+
+  .about {
+    padding: 5rem 2rem;
+  }
+
+  .about-images {
+    height: 400px;
+  }
+
+  .about-text {
+    padding-right: 0;
+  }
+
+  .about-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .menu-preview {
+    padding: 5rem 2rem;
   }
 
   .menu-grid {
     grid-template-columns: 1fr;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .menu-header h2 {
+    font-size: 2.5rem;
   }
 
-  .hero-desc {
-    font-size: 1.1rem;
+  .location-section {
+    padding: 0;
+  }
+
+  .location-info {
+    padding: 4rem 2rem;
+  }
+
+  .location-info h2 {
+    font-size: 2.5rem;
+  }
+
+  .location-map {
+    height: 350px;
+  }
+
+  .instagram-section {
+    padding: 5rem 2rem;
+  }
+
+  .instagram-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .instagram-iframe {
+    height: 480px;
+  }
+
+  .gallery-banner {
+    grid-template-columns: 1fr 1fr;
+    height: 400px;
+  }
+
+  .footer {
+    padding: 5rem 2rem 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .legal-page {
+    padding-top: 8rem;
+  }
+
+  .legal-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .legal-footer {
+    padding: 2rem;
   }
 }
