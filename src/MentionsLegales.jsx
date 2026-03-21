@@ -23,8 +23,8 @@ const MentionsLegales = ({ onBack }) => {
                     <h2>1. Éditeur du site</h2>
                     <p>
                         Le présent site, accessible à l'URL www.elysma.fr, est édité par :<br />
-                        Elysma Coffee & Brunch, société au capital de 10 000 euros, inscrite au R.C.S. de Paris sous le numéro 123 456 789,<br />
-                        dont le siège social est situé au 12 rue de la Paix, 75002 Paris.
+                        Elysma Coffee & Brunch, société au capital de 10 000 euros, inscrite au R.C.S. de Toulouse sous le numéro 123 456 789,<br />
+                        dont le siège social est situé au 365 Route de Seysse, Toulouse.
                     </p>
                 </section>
 

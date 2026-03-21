@@ -56,12 +56,12 @@ function MainApp({ onShowLegal }) {
         <div className="hero-bg"></div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <div className="hero-badge fade-in">Artisanat & Passion</div>
+          <div className="hero-badge fade-in">— Coffee & Brunch signature —</div>
           <h1 className="hero-title fade-in delay-1">
             Coffee & Brunch<br /><span>Signature</span>
           </h1>
           <p className="hero-desc fade-in delay-2">
-            L'excellence du café de spécialité rencontre la créativité d'un brunch gastronomique dans un cadre d'exception.
+            ✨ L’élégance à savourer, du matin au goûter
           </p>
           <button className="btn-reservation fade-in delay-3" onClick={() => scrollToSection('menu')}>
             Découvrir la Carte
@@ -185,7 +185,7 @@ function MainApp({ onShowLegal }) {
         <div className="location-grid">
           <div className="location-info">
             <span className="section-label">Où Nous Trouver</span>
-            <h2>Un Lieu <i>Unique</i> en plein cœur de Paris</h2>
+            <h2>Un Lieu <i>Unique</i> en plein cœur de Toulouse</h2>
             <p className="location-desc">
               Poussez les portes d'Elysma et plongez dans une atmosphère chaleureuse où le temps s'arrête. Conçu comme un écrin de calme urbain, notre espace marie élégance intemporelle et convivialité.
             </p>
@@ -195,7 +195,7 @@ function MainApp({ onShowLegal }) {
                 <MapPin className="info-icon" />
                 <div>
                   <h4>Adresse</h4>
-                  <p>12 rue de la Paix<br />75002 Paris, France</p>
+                  <p>365 Route de Seysse<br />Toulouse</p>
                   <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="btn-link">Itinéraire <Navigation size={14} /></a>
                 </div>
               </div>
@@ -211,7 +211,7 @@ function MainApp({ onShowLegal }) {
           </div>
           <div className="location-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.536783858485!2d2.3298642156740685!3d48.8670119792881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e31e5008be5%3A0x6b2e3f41e976db55!2s12%20Rue%20de%20la%20Paix%2C%2075002%20Paris!5e0!3m2!1sfr!2sfr!4v1683802930265!5m2!1sfr!2sfr"
+              src="https://maps.google.com/maps?q=365%20Route%20de%20Seysse,%20Toulouse&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -267,7 +267,7 @@ function MainApp({ onShowLegal }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <h2>Elysma<span>Signature</span></h2>
-            <p>Une évasion culinaire et gustative au cœur de la ville. Votre nouvelle adresse de référence pour le Specialty Coffee & Brunch.</p>
+            <p>✨ L’élégance à savourer, du matin au goûter</p>
           </div>
 
           <div className="footer-col">
@@ -278,7 +278,7 @@ function MainApp({ onShowLegal }) {
             </div>
             <div className="contact-info">
               <MapPin size={18} />
-              <span>12 rue de la Paix<br />75002 Paris</span>
+              <span>365 Route de Seysse<br />Toulouse</span>
             </div>
           </div>
 
