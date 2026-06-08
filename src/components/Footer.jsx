@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MapPin, Clock, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { TikTokIcon } from '../pages/Home';
 
 export default function Footer({ onShowLegal }) {
   return (
@@ -15,11 +16,11 @@ export default function Footer({ onShowLegal }) {
           <h4>Contact</h4>
           <div className="contact-info">
             <Phone size={18} />
-            <span>01 23 45 67 89</span>
+            <a href="tel:0767855449" style={{ color: 'inherit', textDecoration: 'none' }}>07 67 85 54 49</a>
           </div>
           <div className="contact-info">
             <MapPin size={18} />
-            <span>365 Route de Seysse<br />Toulouse</span>
+            <a href="https://www.google.com/maps/search/365+Rte+de+Seysses,+31100+Toulouse" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>365 Rte de Seysses<br />31100 Toulouse</a>
           </div>
         </div>
 
@@ -28,8 +29,8 @@ export default function Footer({ onShowLegal }) {
           <div className="contact-info">
             <Clock size={18} style={{ alignSelf: 'flex-start', marginTop: '4px' }} />
             <span>
-              Lun - Ven: 8h - 18h<br />
-              Sam - Dim: 9h - 17h
+              Lundi : Fermé<br />
+              Mar – Dim : 10h00 – 19h00
             </span>
           </div>
         </div>
@@ -47,6 +48,7 @@ export default function Footer({ onShowLegal }) {
         <p>&copy; {new Date().getFullYear()} Elysma Coffee & Brunch. Créé avec passion.</p>
         <div className="socials">
           <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
+          <a href="https://www.tiktok.com/@elysma.coffeeshop" target="_blank" rel="noreferrer" aria-label="TikTok" style={{ marginLeft: '1rem' }}><TikTokIcon size={20} /></a>
         </div>
       </div>
     </footer>

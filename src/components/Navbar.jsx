@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${(scrolled || mobileMenuOpen || location.pathname !== '/') ? 'scrolled-nav' : ''}`}>
       <Link to="/" className="brand" style={{ textDecoration: 'none' }}>
-        Elysma<span>Signature</span>
+        <img src="/assets/logo-elysma.png" alt="Elysma Signature" className="navbar-logo" />
       </Link>
 
       <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
