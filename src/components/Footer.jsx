@@ -46,6 +46,9 @@ export default function Footer({ onShowLegal }) {
 
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Elysma Coffee & Brunch. Créé avec passion.</p>
+        <p style={{ fontSize: '0.8rem', opacity: 0.6 }}>
+          Réalisé par <a href="https://microdidact.com" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>microdidact.com</a>
+        </p>
         <div className="socials">
           <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
           <a href="https://www.tiktok.com/@elysma.coffeeshop" target="_blank" rel="noreferrer" aria-label="TikTok" style={{ marginLeft: '1rem' }}><TikTokIcon size={20} /></a>
