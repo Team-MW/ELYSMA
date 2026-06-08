@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
@@ -10,7 +10,17 @@ import Contact from './pages/Contact';
 import MentionsLegales from './MentionsLegales';
 import './App.css';
 
+const pageMap = {
+  '/': 'home',
+  '/menu': 'menu',
+  '/location': 'location',
+  '/contact': 'contact',
+};
+
 function AppLayout({ onShowLegal }) {
+  const location = useLocation();
+  const currentPage = pageMap[location.pathname] || 'home';
+
   return (
     <>
       <Navbar />
@@ -22,7 +32,7 @@ function AppLayout({ onShowLegal }) {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      <FAQ />
+      <FAQ page={currentPage} />
       <Footer onShowLegal={onShowLegal} />
     </>
   );
