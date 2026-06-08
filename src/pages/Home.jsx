@@ -231,7 +231,7 @@ export default function Home() {
         </div>
 
         <div className="reviews-cta fade-in delay-2">
-          <a href="https://www.google.com/maps/search/365+Rte+de+Seysses,+31100+Toulouse" target="_blank" rel="noreferrer" className="btn-social">
+          <a href="https://www.google.com/maps/search/365+Rte+de+Seysses,+31100+Toulouse" target="_blank" rel="noreferrer" className="btn-google-cta">
             <svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.14 0 5.95 1.08 8.17 2.86l6.1-6.1C34.36 3.08 29.44 1 24 1 14.82 1 7.01 6.47 3.38 14.27l7.12 5.53C12.22 13.41 17.62 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.61-.14-3.17-.4-4.68H24v9.36h12.7c-.55 2.96-2.2 5.47-4.67 7.15l7.14 5.55C43.55 37.68 46.5 31.56 46.5 24.5z"/><path fill="#FBBC05" d="M10.5 28.19A14.7 14.7 0 0 1 9.5 24c0-1.45.2-2.86.56-4.2L2.94 14.27A22.94 22.94 0 0 0 1 24c0 3.66.87 7.12 2.38 10.2l7.12-5.53.98-.48z"/><path fill="#34A853" d="M24 47c5.44 0 10.01-1.8 13.34-4.88l-7.14-5.55c-1.87 1.26-4.27 2-6.2 2-6.38 0-11.78-3.91-13.5-9.43l-7.12 5.53C7.01 41.53 14.82 47 24 47z"/></svg>
             Voir tous les avis sur Google
           </a>
